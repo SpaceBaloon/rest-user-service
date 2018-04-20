@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author belki
+ * @author Belkin Sergei
  */
 public interface UserRepository extends JpaRepository<User, Integer>{    
 }

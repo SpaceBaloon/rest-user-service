@@ -81,7 +81,7 @@ public class Role implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if( this == obj ) return true;
+        if( obj == null ) return false;
         if( !( obj instanceof Role ) ) return false;
         Role other = (Role) obj;
         if( this.id != other.id && ( this.id == null ||! this.id.equals( other.id ) ) ) return false;

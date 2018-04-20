@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 
 /**
  *
- * @author belki
+ * @author Belkin Sergei.
  */
 @Entity
 @Table( name = "users" )
@@ -109,7 +109,8 @@ public class User implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if( this == obj ) return true;
+//        if( this == obj ) return true; compare field by field instead of compare pointers
+        if( obj == null ) return false;
         if( ! (obj instanceof User ) ) return false;
         final User other = (User) obj;
         if( other.id != this.id && ( this.id == null || !this.id.equals( other.id ) ) )
@@ -127,9 +128,9 @@ public class User implements Serializable {
     public int hashCode() {
         int hash = 13;
         hash = 97 * hash + id;
-        hash = 89 * hash + ( name != null ? name.hashCode() : 0 );
-        hash = 47 * hash + ( login != null ? login.hashCode() : 0 );
-        hash = 53 * hash + ( password != null ? password.hashCode() : 0 );
+        hash = 97 * hash + ( name != null ? name.hashCode() : 0 );
+        hash = 97 * hash + ( login != null ? login.hashCode() : 0 );
+        hash = 97 * hash + ( password != null ? password.hashCode() : 0 );
         return hash;
     }
 
